@@ -18,17 +18,17 @@ Los métodos de `pytrends` típicamente utilizan los siguientes parámetros:
 
 Para satisfacer propósitos del proyecto, se realizarán consultas a la API a través de los siguientes métodos:
 
-`Interés en el tiempo`
+`pytrends.interest_over_time()`
 
 >Regresa datos históricos indexados para los momentos en los que los criterios de búsqueda, definidos en `kw_list`, tuvieron una mayor cantidad de búsquedas.
 >
 >**IMPORTANTE**: Los números representan el interés de búsqueda en relación con el valor máximo de la lista correspondiente a la región y el período especificados. El valor 100 indica la popularidad máxima del término, 50 implica la mitad de popularidad, y 0 significa que no hubo suficientes datos para este término
 
-`Interés por región`
+`pytrends.interest_by_region()`
 
 >Regresa las regiones en las cuales la palabra fue más buscada.
 
-`Temas relacionados`
+`pytrends.related_topics()`
 
 >Regresa un diccionario de dataframes que contienen información de las palabras clave relacionadas con el criterio de búsqueda. Esto lo hace en dos categorías:
 >-  Temas top
