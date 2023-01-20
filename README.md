@@ -21,3 +21,7 @@ Adicionalmente, se debe respetar la siguiente convención:
     -   `prototipo.<ext>`
     -   `prototipado.<ext>`
     -   `proto.<ext>`
+    
+    
+    Carla Andrea Sosa
+    
