@@ -1,13 +1,17 @@
-# INAI ITAM
+# Contenido
+-   [Descripción del problema](#descripción-del-problema)
+-   [Pytrends](#pytrends)
+    -   [Métodos de API](#métodos-de-api)
+-   [Adquisición de datos](#adquisición-de-datos)
+-   [Convenciones](#convenciones)
+
+# Descripción del problema
 Proyecto de adquisición y monitoreo de datos de Google Trends para el Instituto Nacional de Acceso a la Información y Protección de Datos Personales, INAI. Se definireron los siguientes requisitos que debe satisfacer la API:
 -   Hacer consultas histróricas con palabras clave
 -   Hacer consultas en tiempo real
 -   API preferentemente libre
 
-## Pytrends
-En el siguiente [enlace](https://pypi.org/project/pytrends/) se puede encontrar la documentación oficial de la API.
-
-### Métodos de la API
+# Pytrends
 Los métodos de `pytrends` típicamente utilizan los siguientes parámetros:
 -   `kw_list`: Lista de pálabras clave o criterios de búsqueda
 -   `cat`: Categoría para reducir resultados
@@ -15,6 +19,11 @@ Los métodos de `pytrends` típicamente utilizan los siguientes parámetros:
 -   `tz`: Offset de zona horaria en minutos, para más información ir a la [liga](https://en.wikipedia.org/wiki/UTC_offset) (México es _UTC-6_ lo cual resulta en un offset de `360`)
 -   `timeframe`: Ventana de tiempo de consulta
 -   `gprop`: (Metadato) Propiedad de google que se quiere filtrar
+
+En el siguiente [enlace](https://pypi.org/project/pytrends/) se puede encontrar la documentación oficial de la API.
+
+## Métodos de API
+
 
 Para satisfacer propósitos del proyecto, se realizarán consultas a la API a través de los siguientes métodos:
 
@@ -34,12 +43,12 @@ Para satisfacer propósitos del proyecto, se realizarán consultas a la API a tr
 >-  Temas top
 >-  Temas en aumento
 
-# Proceso de adquisición de datos
+# Adquisición de datos
 
 ![adquisicion-datos](/diagramas-flujo/adquisicion_datos_trends_api.drawio.png)
 
 
-# Convención de nombres de archivos
+# Convenciones
 
 Como regla general, y con el único propósito de mantener ordenado el repositorio del proyecto, para el nombre de los archivos, se determina **NO UTILIZAR**:
 -   Mayúsculas.
