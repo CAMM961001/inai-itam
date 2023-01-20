@@ -42,6 +42,17 @@ class Consultar:
 
         return salida
 
+    def interes_region(self):
+        periodo = f"{self.inicio} {self.fin}"
+
+        self.consulta.build_payload(kw_list=[self.criterio], cat=0, timeframe=periodo, geo='MX')
+
+        salida = self.consulta.interest_by_region().reset_index()
+        salida.columns = ["estado","valor"]
+        salida = salida.to_dict()
+
+        return salida
+
 
 
 
