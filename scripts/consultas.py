@@ -27,11 +27,20 @@ class Consultar:
 
         return salida
 
-    def temas_relacionado(self):
+    def temas_relacionados(self):
         periodo = f"{self.inicio} {self.fin}"
 
         self.consulta.build_payload(kw_list=[self.criterio], cat=0, timeframe=periodo, geo='MX')
 
-        
+        salida = self.consulta.related_topics()
+        aumento = salida[self.criterio]['rising'][['value','formattedValue','topic_title','topic_type']]
+        aumento.columns = ["valor","pct_valor","descripcion","tipo"]
+        top = salida[self.criterio]['top'][['value','formattedValue','topic_title','topic_type']]
+        top.columns = ["valor","pct_valor","descripcion","tipo"]
+        salida = {"aumento":aumento.to_dict(), "top":top.to_dict()}
+
+        return salida
+
+
 
 
