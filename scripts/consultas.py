@@ -8,7 +8,7 @@ class Consultar:
     
     def __init__(self, criterio, inicio, fin, ventana=2):
         self.criterio = criterio
-        self.consulta = TrendReq(hl='es-MX', tz=300, geo='MX')
+        self.consulta = TrendReq(hl='es-MX', tz=360, geo='MX')
         self.inicio = inicio
         self.fin = fin
         self.ventana = ventana
