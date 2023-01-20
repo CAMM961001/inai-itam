@@ -1,22 +1,22 @@
 # INAI ITAM
-Proyecto de adquisición y monitoreo de datos de Google Trends para el Instituto Nacional de Acceso a la Informaación y Protección de Datos Personales, INAI. Se definireron los siguientes requisitos que debe satisfacer la API:
+Proyecto de adquisición y monitoreo de datos de Google Trends para el Instituto Nacional de Acceso a la Información y Protección de Datos Personales, INAI. Se definireron los siguientes requisitos que debe satisfacer la API:
 -   Hacer consultas histróricas con palabras clave
 -   Hacer consultas en tiempo real
 -   API preferentemente libre
 
-# Pytrends
+## Pytrends
 En el siguiente [enlace](https://pypi.org/project/pytrends/) se puede encontrar la documentación oficial de la API.
 
-## Métodos de la API
+### Métodos de la API
 Los métodos de `pytrends` típicamente utilizan los siguientes parámetros:
 -   `kw_list`: Lista de pálabras clave o criterios de búsqueda
 -   `cat`: Categoría para reducir resultados
--   `geo`: Abrebiación de dos letras de un país.
--   `tz`: Offset de zona horaria en minutos, para más información ir a la [liga](https://en.wikipedia.org/wiki/UTC_offset)
+-   `geo`: Abrebiación de dos letras de un país (`MX` para México)
+-   `tz`: Offset de zona horaria en minutos, para más información ir a la [liga](https://en.wikipedia.org/wiki/UTC_offset) (México es _UTC-6_ lo cual resulta en un offset de `360`)
 -   `timeframe`: Ventana de tiempo de consulta
 -   `gprop`: (Metadato) Propiedad de google que se quiere filtrar
 
-Y permite consultar información a través de los siguientes métodos:
+Para satisfacer propósitos del proyecto, se realizarán consultas a la API a través de los siguientes métodos:
 
 `Interés en el tiempo`
 
@@ -24,6 +24,15 @@ Y permite consultar información a través de los siguientes métodos:
 >
 >**IMPORTANTE**: Los números representan el interés de búsqueda en relación con el valor máximo de la lista correspondiente a la región y el período especificados. El valor 100 indica la popularidad máxima del término, 50 implica la mitad de popularidad, y 0 significa que no hubo suficientes datos para este término
 
+`Interés por región`
+
+>Regresa las regiones en las cuales la palabra fue más buscada.
+
+`Temas relacionados`
+
+>Regresa un diccionario de dataframes que contienen información de las palabras clave relacionadas con el criterio de búsqueda. Esto lo hace en dos categorías:
+>-  Temas top
+>-  Temas en aumento
 
 # Proceso de adquisición de datos
 
