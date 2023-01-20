@@ -6,16 +6,17 @@ from pytrends.request import TrendReq
 
 class Consultar:
     
-    def __init__(self, criterio, inicio, fin):
+    def __init__(self, criterio, inicio, fin, ventana=2):
         self.criterio = criterio
         self.consulta = TrendReq(hl='es-MX', tz=300, geo='MX')
         self.inicio = inicio
         self.fin = fin
+        self.ventana = ventana
 
 
-    def interes_tiempo(self, periodo=2):
+    def interes_tiempo(self):
         fecha_fin = dt.date.today()
-        fecha_inicio = fecha_fin - relativedelta(years=periodo)
+        fecha_inicio = fecha_fin - relativedelta(years=self.ventana)
         periodo = f"{fecha_inicio.strftime('%Y-%m-%d')} {fecha_fin.strftime('%Y-%m-%d')}"
 
         self.consulta.build_payload(kw_list=[self.criterio], cat=0, timeframe=periodo, geo='MX')
