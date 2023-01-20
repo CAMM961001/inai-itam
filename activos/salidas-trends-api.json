@@ -1,0 +1,34 @@
+[
+    {
+        "criterio":"",
+        "interes_tiempo":
+        {
+            "ultima_consulta":0,
+            "contenido":""
+        },
+        "temas_relacionados":
+        {
+            "ultima_consulta":0,
+            "consultas":
+            [
+                {
+                    "fecha_inicio":0,
+                    "fecha_fin":0,
+                    "contenido":""
+                }
+            ]
+        },
+        "interes_region":
+        {
+            "ultima_consulta":0,
+            "consultas":
+            [
+                {
+                    "fecha_inicio":0,
+                    "fecha_fin":0,
+                    "contenido":""
+                }
+            ]
+        }
+    }
+]
