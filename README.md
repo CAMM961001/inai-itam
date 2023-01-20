@@ -23,8 +23,6 @@ Los métodos de `pytrends` típicamente utilizan los siguientes parámetros:
 En el siguiente [enlace](https://pypi.org/project/pytrends/) se puede encontrar la documentación oficial de la API.
 
 ## Métodos de API
-
-
 Para satisfacer propósitos del proyecto, se realizarán consultas a la API a través de los siguientes métodos:
 
 `pytrends.interest_over_time()`
@@ -44,12 +42,9 @@ Para satisfacer propósitos del proyecto, se realizarán consultas a la API a tr
 >-  Temas en aumento
 
 # Adquisición de datos
-
 ![adquisicion-datos](/diagramas-flujo/adquisicion_datos_trends_api.drawio.png)
 
-
 # Convenciones
-
 Como regla general, y con el único propósito de mantener ordenado el repositorio del proyecto, para el nombre de los archivos, se determina **NO UTILIZAR**:
 -   Mayúsculas.
 -   Acentos.
