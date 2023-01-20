@@ -129,9 +129,6 @@ dmypy.json
 .pyre/
 
 # Prototipos
-prototipo.py
-prototipo.ipynb
-prototipado.py
-prototipado.ipynb
-proto.py
-proto.ipynb
+prototipo.*
+prototipado.*
+proto.*
