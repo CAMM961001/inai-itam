@@ -39,17 +39,15 @@ def etl():
             # Leer archivo JSON
             listObj = list()
             with open(CORPUS_PATH) as f:
-                
                 listObj = json.load(f)
                 consulta = consultas.consulta_completa(criterio=criterio, anio=2, meses=3)
                 listObj.append(consulta)
-
             f.close()
             
             # Escribir resultados de consulta en corpus
-            with open(CORPUS_PATH, 'w') as f:
-                json.dump(listObj, f, separators=(',',': '))
-            f.close()
+            with open(CORPUS_PATH, 'w') as json_file:
+                json.dump(listObj, json_file, separators=(',',': '))
+            json_file.close()
             
             # Registrar estado de consulta en log
             print(f"Se agregó existosamente criterio: {criterio}")
