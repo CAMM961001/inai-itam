@@ -4,3 +4,4 @@ matplotlib
 pytrends
 jupyterlab
 ipywidgets
+pyyaml
