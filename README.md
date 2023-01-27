@@ -53,8 +53,9 @@ Como regla general, y con el único propósito de mantener ordenado el repositor
 
 Adicionalmente, se debe respetar la siguiente convención:
 -   Archivos: `<nombre_del_archivo_separado_por_guion_bajo>.<ext>`
--   Directiorios: `<nombre-del-directiorio-separado-por-guion-medio>`
+-   Directiorios: `<nombre_del_directiorio_separado_por_guion_bajo>`
 -   Prototipos: Los prototipos no son considerados archivos productivos, por ende, su incorporación al repositorio está descartada por defecto. Para ello, se puede utilizar algún nombre bajo la convención:
     -   `prototipo.<ext>`
     -   `prototipado.<ext>`
     -   `proto.<ext>`
+    -   Directiorio: `prototipos`
