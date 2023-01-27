@@ -1,19 +1,19 @@
 semanas cotizadas
 expediente medico
-proteccion
+proteccion datos
 certificado covid
 resolucion pension
 pension
 pension documentos
 historial laboral
 constancia
+acceso informacion
 informacion
 informacion publica
 informacion gobierno
 curso inai
 capacitacion inai
 historial laboral
-semanas cotizadas
 semanas imss
 inai cotizacion
 imss cotizadas
@@ -45,8 +45,7 @@ documentos
 invalidez
 resolucion
 pension
-eventos inai			
-denuncia prodatos			
+eventos inai
 informacion publica
 certificado
 vulnerar
