@@ -40,13 +40,13 @@ def etl():
             listObj = list()
             with open(CORPUS_PATH) as f:
                 listObj = json.load(f)
-
-            estructura = consultas.consulta_completa(criterio=criterio, anio=2, meses=3)
-                
-            listObj.append(estructura)
+                consulta = consultas.consulta_completa(criterio=criterio, anio=2, meses=3)
+                listObj.append(consulta)
+            f.close()
             
-            with open(CORPUS_PATH, 'w') as json_file:
-                json.dump(listObj, json_file, separators=(',',': '))
+            with open(CORPUS_PATH, 'w') as f:
+                json.dump(listObj, f, separators=(',',': '))
+            f.close()
             print(f"Se agregó existosamente criterio: {criterio}")
         
         # ---- Criterio de búsqueda existente ----
