@@ -42,7 +42,7 @@ Para satisfacer propósitos del proyecto, se realizarán consultas a la API a tr
 >-  Temas en aumento
 
 # Adquisición de datos
-![adquisicion-datos](/diagramas-flujo/adquisicion_datos_trends_api.drawio.png)
+![adquisicion-datos](/diagramas_flujo/adquisicion_datos_trends_api.drawio.png)
 
 # Convenciones
 Como regla general, y con el único propósito de mantener ordenado el repositorio del proyecto, para el nombre de los archivos, se determina **NO UTILIZAR**:
