@@ -1,22 +1,3 @@
 [
-    {
-        "criterio":"",
-        "interes_tiempo":"",
-        "temas_relacionados":
-        [
-            {
-                "fecha_inicio":0,
-                "fecha_fin":0,
-                "contenido":""
-            }
-        ],
-        "interes_region":
-        [
-            {
-                "fecha_inicio":0,
-                "fecha_fin":0,
-                "contenido":""
-            }
-        ]
-    }
+    
 ]
