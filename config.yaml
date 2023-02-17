@@ -6,5 +6,5 @@ datos:
   criterios: "datos/bruto/proto.txt" #criterios_busqueda
 logs:
 etl:
-  corpus: "activos/salidas_trends_api.json"
+  corpus: "datos/procesados/salidas_trends_api.json"
   log: "activos/log_consulta.csv"
