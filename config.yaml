@@ -2,6 +2,8 @@ main:
   components_repository: "https://github.com/CAMM961001/inai-itam"
   project_name: inai_google_trends
   steps: all
+datos:
+logs:
 etl:
   criterios: "activos/proto.txt" #criterios_busqueda
   corpus: "activos/salidas_trends_api.json"
