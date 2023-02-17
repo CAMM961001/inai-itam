@@ -4,6 +4,7 @@ main:
   steps: all
 datos:
   criterios: "datos/bruto/proto.txt" #criterios_busqueda
+  corpus: "datos/procesados/salidas_trends_api.json"
 logs:
 etl:
   corpus: "datos/procesados/salidas_trends_api.json"

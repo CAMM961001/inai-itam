@@ -1,9 +1,13 @@
-import os, json, yaml, sys
-
-CURRENT = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.dirname(CURRENT)
+import os
+import json
+import yaml
+import logging
 
 import modulos.consultas as consultas
+
+# Paths absolutos
+CURRENT = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(CURRENT)
 
 # Archivo de configuración
 with open(os.path.join(ROOT, 'config.yaml'), 'r') as f:
@@ -16,7 +20,7 @@ with open(file=os.path.join(ROOT, config['datos']['criterios']), mode='r') as f:
 f.close()
 
 # Archivo de corpus de consulta
-CORPUS_PATH = os.path.join(ROOT, config['etl']['corpus'])
+CORPUS_PATH = os.path.join(ROOT, config['datos']['corpus'])
 with open(file=CORPUS_PATH, mode='r') as f:
     corpus = json.load(f)
 f.close()
