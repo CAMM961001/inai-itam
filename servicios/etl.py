@@ -11,7 +11,7 @@ with open(os.path.join(ROOT, 'config.yaml'), 'r') as f:
 f.close()
 
 # Archivo de criterios de búsqueda
-with open(file=os.path.join(ROOT, config['etl']['criterios']), mode='r') as f:
+with open(file=os.path.join(ROOT, config['datos']['criterios']), mode='r') as f:
     criterios_busqueda = [row.strip() for row in f]        
 f.close()
 
