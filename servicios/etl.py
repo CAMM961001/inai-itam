@@ -1,11 +1,9 @@
 import os, json, yaml, sys
 
 CURRENT = os.path.dirname(os.path.abspath(__file__))
-PARENT = os.path.dirname(CURRENT)
-ROOT = os.path.dirname(PARENT)
-sys.path.append(PARENT)
+ROOT = os.path.dirname(CURRENT)
 
-import consultas
+import modulos.consultas as consultas
 
 # Archivo de configuración
 with open(os.path.join(ROOT, 'config.yaml'), 'r') as f:
