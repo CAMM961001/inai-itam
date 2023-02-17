@@ -3,8 +3,8 @@ main:
   project_name: inai_google_trends
   steps: all
 datos:
+  criterios: "datos/bruto/proto.txt" #criterios_busqueda
 logs:
 etl:
-  criterios: "activos/proto.txt" #criterios_busqueda
   corpus: "activos/salidas_trends_api.json"
   log: "activos/log_consulta.csv"
