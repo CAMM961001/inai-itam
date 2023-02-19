@@ -66,11 +66,19 @@ class Consultar:
         salida = self.consulta.related_topics()
 
         try:
-            aumento = salida[self.criterio]['rising'][['value','formattedValue','topic_title','topic_type']]
-            aumento.columns = ["valor","pct_valor","descripcion","tipo"]
-            top = salida[self.criterio]['top'][['value','formattedValue','topic_title','topic_type']]
-            top.columns = ["valor","pct_valor","descripcion","tipo"]
-            salida = {"aumento":aumento.to_dict(), "top":top.to_dict()}
+            if salida[self.criterio]['rising'].empty: aumento = None
+            else:
+                aumento = salida[self.criterio]['rising'][['value','formattedValue','topic_title','topic_type']]
+                aumento.columns = ["valor","pct_valor","descripcion","tipo"]
+                aumento = aumento.to_dict()
+            
+            if salida[self.criterio]['top'].empty: top = None
+            else:
+                top = salida[self.criterio]['top'][['value','formattedValue','topic_title','topic_type']]
+                top.columns = ["valor","pct_valor","descripcion","tipo"]
+                top = top.to_dict()
+            
+            salida = {"aumento":aumento, "top":top}
 
         except KeyError:
             pass
