@@ -5,6 +5,7 @@ main:
 datos:
   criterios: "datos/bruto/criterios_busqueda.txt" #proto
   corpus: "datos/procesados/salidas_trends_api.json"
+  interes_region: "datos/bruto/interes_region.json"
 logs:
   etl: "logs/etl.log"
 etl:
