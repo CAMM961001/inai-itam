@@ -1,4 +1,4 @@
-import os, sys
+import os, sys, json
 import datetime as dt
 
 from dateutil.relativedelta import relativedelta
@@ -95,6 +95,17 @@ class Consultar:
 
         return salida
 
+
+def criterios_existentes(file):
+    
+    # Se abre el archivo json
+    with open(file=file, mode='r') as f:
+        corpus = json.load(f)
+    f.close()
+
+    existencias = [corpus[idx]['criterio'] for idx in range(len(corpus))]
+    
+    return existencias
 
 def consulta_completa(criterio, anio=2, meses=3):
     """
