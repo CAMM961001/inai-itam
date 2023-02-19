@@ -16,7 +16,7 @@ with open(os.path.join(ROOT, 'config.yaml'), 'r') as f:
     config = yaml.safe_load(f)
 f.close()
 
-# PAths de script
+# Paths de script
 TIEMPO_PATH = os.path.join(ROOT, config['datos']['tiempo'])
 REGION_PATH = os.path.join(ROOT, config['datos']['region'])
 RELACION_PATH = os.path.join(ROOT, config['datos']['relacionados'])
@@ -40,13 +40,10 @@ periodos = utils.generar_periodos(
     meses=config['etl']['meses'])
 
 # Enlistar criterios existentes
-with open(file=TIEMPO_PATH, mode='r') as f:
-    corpus = json.load(f)
-f.close()
-existencias = [corpus[idx]['criterio'] for idx in range(len(corpus))]
-
+existencias = consultas.criterios_existentes(file=TIEMPO_PATH)
 
 # Extracción de información y almacenamiento
+prompt = f'Trabajo: {__file__}\nConsulta: interes_tiempo\n'
 for criterio in criterios_busqueda:
 
     # ---- Interés en el tiempo ----
@@ -63,20 +60,31 @@ for criterio in criterios_busqueda:
 
     # Criterios nuevos en corpus
     if criterio not in existencias:
-        print(criterio)
+        try:
+            # Leer archivo JSON
+            listObj = list()
+            with open(TIEMPO_PATH, 'r') as f:
+                listObj = json.load(f)
+                estructura['contenidos'] = consulta.interes_tiempo()
+                listObj.append(estructura)
+            f.close()
+            
+            # Escribir resultados de consulta en corpus
+            with open(TIEMPO_PATH, 'w') as json_file:
+                json.dump(listObj, json_file, separators=(',',': '))
+            json_file.close()
 
-        # Leer archivo JSON
-        listObj = list()
-        with open(TIEMPO_PATH, 'r') as f:
-            listObj = json.load(f)
-            estructura['contenidos'] = consulta.interes_tiempo()
-            listObj.append(estructura)
-        f.close()
-        
-        # Escribir resultados de consulta en corpus
-        with open(TIEMPO_PATH, 'w') as json_file:
-            json.dump(listObj, json_file, separators=(',',': '))
-        json_file.close()
+            # Registro en log
+            prompt += f'\t- "{criterio}" agregado\n'
+
+        except Exception:
+            prompt += f'\t- "{criterio}" error\n'
+
+    else:
+        # Registro en log
+        prompt += f'\t- "{criterio}" existente\n'
+
+logging.info(prompt)
 
 
 
@@ -122,4 +130,4 @@ for criterio in criterios_busqueda:
 
 
 if __name__ == '__main__':
-    print('Done')
+    print('Trabajo terminado')
