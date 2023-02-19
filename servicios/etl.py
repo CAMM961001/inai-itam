@@ -75,58 +75,16 @@ for criterio in criterios_busqueda:
             json_file.close()
 
             # Registro en log
-            prompt += f'\t- "{criterio}" agregado\n'
+            prompt += f'\t- "{criterio}": agregado\n'
 
-        except Exception:
-            prompt += f'\t- "{criterio}" error\n'
+        except (KeyError, Exception):
+            prompt += f'\t- "{criterio}": error, sin salida de consulta\n'
 
     else:
         # Registro en log
-        prompt += f'\t- "{criterio}" existente\n'
+        prompt += f'\t- "{criterio}": existente\n'
 
 logging.info(prompt)
-
-
-
-# # Criterios existentes en corpus
-
-
-# def etl():
-#     """
-    
-#     """
-#     prompt = f"Trabajo: {__file__}\n"
-#     for criterio in criterios_busqueda:
-        
-#         # ---- Criterio de búsqueda nuevo ----
-#         if criterio not in existencias:        
-#             try:
-#                 consulta = consultas.consulta_completa(criterio=criterio, anio=2, meses=3)
-#                 prompt += f'\t- "{criterio}" agregado\n'
-            
-#             except Exception:
-#                 consulta = None
-#                 prompt += f'\t- "{criterio}" error\n'
-#                 break
-
-#             if consulta != None:
-                # # Leer archivo JSON
-                # listObj = list()
-                # with open(CORPUS_PATH, 'r') as f:
-                #     listObj = json.load(f)
-                #     listObj.append(consulta)
-                # f.close()
-                
-                # # Escribir resultados de consulta en corpus
-                # with open(CORPUS_PATH, 'w') as json_file:
-                #     json.dump(listObj, json_file, separators=(',',': '))
-                # json_file.close()
-
-#         # ---- Criterio de búsqueda existente ----
-#         else:
-#             prompt += f'\t- "{criterio}" existente\n'
-
-#     logging.info(prompt)
 
 
 if __name__ == '__main__':
