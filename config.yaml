@@ -11,5 +11,5 @@ datos:
 logs:
   etl: "logs/etl.log"
 etl:
-  corpus: "datos/procesados/salidas_trends_api.json"
-  log: "activos/log_consulta.csv"
+  anios: 2
+  meses: 3
