@@ -202,6 +202,8 @@ for criterio in criterios_busqueda:
         # Registro en log
         prompt += f'\t- "{criterio}": existente\n'
 
+logging.info(prompt)
+
 
 if __name__ == '__main__':
     print('Trabajo terminado')
