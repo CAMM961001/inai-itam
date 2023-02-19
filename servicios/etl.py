@@ -39,14 +39,14 @@ periodos = utils.generar_periodos(
     anios=config['etl']['anios'],
     meses=config['etl']['meses'])
 
-# Enlistar criterios existentes
+
+# ---- Interés en el tiempo ----
 existencias = consultas.criterios_existentes(file=TIEMPO_PATH)
 
-# Extracción de información y almacenamiento
+# Iniciar log de trabajo
 prompt = f'Trabajo: {__file__}\nConsulta: interes_tiempo\n'
 for criterio in criterios_busqueda:
-
-    # ---- Interés en el tiempo ----
+    # Estructura básica de consulta
     estructura = {
         "criterio":criterio,
         "contenidos":[]
@@ -80,6 +80,62 @@ for criterio in criterios_busqueda:
         except (KeyError, Exception):
             prompt += f'\t- "{criterio}": error, sin salida de consulta\n'
 
+    else:
+        # Registro en log
+        prompt += f'\t- "{criterio}": existente\n'
+
+logging.info(prompt)
+
+
+# ---- Interés por región ----
+existencias = consultas.criterios_existentes(file=REGION_PATH)
+
+# Iniciar log de trabajo
+prompt = f'Trabajo: {__file__}\nConsulta: interes_region\n'
+for criterio in criterios_busqueda:
+    # Estructura básica de consulta
+    estructura = {
+        "criterio":criterio,
+        "contenidos":None
+        }
+    
+    # Lógica para criterio nuevos
+    if criterio not in existencias:
+        interes_region = []
+        for idx in range(len(periodos)):
+            
+            inicio, fin = periodos[idx][0], periodos[idx][1]
+            consulta = consultas.Consultar(
+                criterio=criterio,
+                inicio=inicio,
+                fin=fin,
+                ventana=config['etl']['anios'])
+
+            # Estructura de interés por región
+            region_dict = {
+                "fecha_inicio":inicio,
+                "fecha_fin":fin,
+                "consulta":consulta.interes_region()
+                }
+            
+            interes_region.append(region_dict)
+            
+        # Leer archivo JSON
+        listObj = list()
+        with open(REGION_PATH, 'r') as f:
+            listObj = json.load(f)
+            estructura['contenidos'] = interes_region
+            listObj.append(estructura)
+        f.close()
+
+        # Escribir resultados de consulta en corpus
+        with open(REGION_PATH, 'w') as json_file:
+            json.dump(listObj, json_file, separators=(',',': '))
+        json_file.close()
+        
+        # Registro en log
+        prompt += f'\t- "{criterio}": agregado\n'
+            
     else:
         # Registro en log
         prompt += f'\t- "{criterio}": existente\n'
