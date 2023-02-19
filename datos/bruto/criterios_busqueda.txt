@@ -14,7 +14,6 @@ informacion publica
 informacion gobierno
 curso inai
 capacitacion inai
-historial laboral
 semanas imss
 inai cotizacion
 imss cotizadas
@@ -33,9 +32,7 @@ acceso datos
 negar datos
 datos incorrectos
 certificado correccion
-resolucion pension
 pension invalidez
-informacion gobierno
 solicitud informacion
 solicitud contacto
 pedir informacion
@@ -45,8 +42,6 @@ correccion
 documentos
 invalidez
 resolucion
-pension
 eventos inai
-informacion publica
 certificado
 vulnerar
