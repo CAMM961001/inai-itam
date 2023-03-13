@@ -5,3 +5,5 @@ pytrends
 jupyterlab
 ipywidgets
 pyyaml
+Unidecode
+nltk
