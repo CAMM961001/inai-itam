@@ -1,6 +1,14 @@
+import re
 import datetime as dt
 
+from unidecode import unidecode
 from dateutil.relativedelta import relativedelta
+
+from nltk import download
+from nltk.corpus import stopwords
+
+# Descargar base de stopwords de NLTK
+download('stopwords')
 
 def generar_periodos(anios=2, meses=3):
     """
@@ -31,3 +39,27 @@ def generar_periodos(anios=2, meses=3):
         inicial = final
 
     return periodos
+
+
+def formatear_palabras(doc_, idioma='spanish'):
+    stop_words = set(stopwords.words(idioma))
+
+    # Quitar mayúsculas
+    doc_ = doc_.lower()
+
+    # Quitar stopwords
+    ref = doc_.split()
+    filtro = [val for val in ref if val not in stop_words]
+    doc_ = ' '.join(filtro)
+
+    # Quitar acentos
+    doc_ = unidecode(doc_)
+
+    # Quitar caracteres especiales
+    doc_ = re.sub('[,"|@$#]', '', doc_)
+
+    # Cambiar de str a lista
+    doc_ = doc_.split(sep=' ')
+    
+    return doc_
+
