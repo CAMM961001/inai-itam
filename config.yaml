@@ -3,7 +3,7 @@ main:
   project_name: inai_google_trends
   steps: all
 datos:
-  criterios: "datos/bruto/criterios_busqueda.txt" #proto
+  criterios: "datos/bruto/criterios_busqueda.txt"
   corpus: "datos/procesados/salidas_trends_api.json"
   region: "datos/bruto/interes_region.json"
   tiempo: "datos/bruto/interes_tiempo.json"
@@ -13,3 +13,4 @@ logs:
 etl:
   anios: 2
   meses: 3
+  relacionados: "datos/procesados/temas_relacionados.json"
