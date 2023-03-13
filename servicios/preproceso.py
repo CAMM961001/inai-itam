@@ -63,6 +63,7 @@ for id_criterio in range(n_criterios):
             except TypeError:
                 continue
 
+
 # Almacenar resultados
 with open(RELACIONADOS_PROCES, 'w') as json_file:
     json.dump(contenido, json_file)#, separators=(',',': ')
