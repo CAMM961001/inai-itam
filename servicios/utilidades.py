@@ -8,7 +8,7 @@ from nltk import download
 from nltk.corpus import stopwords
 
 # Descargar base de stopwords de NLTK
-download('stopwords')
+#download('stopwords')
 
 def generar_periodos(anios=2, meses=3):
     """
