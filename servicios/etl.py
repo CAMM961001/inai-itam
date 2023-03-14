@@ -4,7 +4,7 @@ import yaml
 import logging
 
 import modulos.consultas as consultas
-import utilidades as utils
+import modulos.utilidades as utils
 
 
 # Paths absolutos

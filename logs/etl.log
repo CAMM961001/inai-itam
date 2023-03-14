@@ -661,3 +661,156 @@ Consulta: temas_relacionados
 	- "certificado": agregado
 	- "vulnerar": agregado
 
+INFO|2023-03-14 10:13:43|root|
+Trabajo: /home/camm961001/Github/inai-itam/servicios/etl.py
+Consulta: interes_tiempo
+	- "inai": existente
+	- "semanas cotizadas": existente
+	- "expediente medico": existente
+	- "proteccion datos": existente
+	- "certificado covid": existente
+	- "resolucion pension": existente
+	- "pension": existente
+	- "pension documentos": existente
+	- "historial laboral": existente
+	- "constancia": existente
+	- "acceso informacion": existente
+	- "informacion": existente
+	- "informacion publica": existente
+	- "informacion gobierno": existente
+	- "curso inai": existente
+	- "capacitacion inai": error, sin salida de consulta
+	- "semanas imss": existente
+	- "inai cotizacion": error, sin salida de consulta
+	- "imss cotizadas": existente
+	- "constancia cotizacion": existente
+	- "expediente clinico": existente
+	- "vulneracion datos": error, sin salida de consulta
+	- "robo identidad": existente
+	- "fraude": existente
+	- "robo datos": existente
+	- "datos personales": existente
+	- "credito llamadas": existente
+	- "aviso privacidad": existente
+	- "denuncia prodatos": error, sin salida de consulta
+	- "fiel prodatos": error, sin salida de consulta
+	- "acceso datos": existente
+	- "negar datos": error, sin salida de consulta
+	- "datos incorrectos": existente
+	- "certificado correccion": existente
+	- "pension invalidez": existente
+	- "solicitud informacion": existente
+	- "solicitud contacto": existente
+	- "pedir informacion": existente
+	- "datos": existente
+	- "derechos": existente
+	- "correccion": existente
+	- "documentos": existente
+	- "invalidez": existente
+	- "resolucion": existente
+	- "eventos inai": error, sin salida de consulta
+	- "certificado": existente
+	- "vulnerar": existente
+
+INFO|2023-03-14 10:13:43|root|
+Trabajo: /home/camm961001/Github/inai-itam/servicios/etl.py
+Consulta: interes_region
+	- "inai": existente
+	- "semanas cotizadas": existente
+	- "expediente medico": existente
+	- "proteccion datos": existente
+	- "certificado covid": existente
+	- "resolucion pension": existente
+	- "pension": existente
+	- "pension documentos": existente
+	- "historial laboral": existente
+	- "constancia": existente
+	- "acceso informacion": existente
+	- "informacion": existente
+	- "informacion publica": existente
+	- "informacion gobierno": existente
+	- "curso inai": existente
+	- "capacitacion inai": existente
+	- "semanas imss": existente
+	- "inai cotizacion": existente
+	- "imss cotizadas": existente
+	- "constancia cotizacion": existente
+	- "expediente clinico": existente
+	- "vulneracion datos": existente
+	- "robo identidad": existente
+	- "fraude": existente
+	- "robo datos": existente
+	- "datos personales": existente
+	- "credito llamadas": existente
+	- "aviso privacidad": existente
+	- "denuncia prodatos": existente
+	- "fiel prodatos": existente
+	- "acceso datos": existente
+	- "negar datos": existente
+	- "datos incorrectos": existente
+	- "certificado correccion": existente
+	- "pension invalidez": existente
+	- "solicitud informacion": existente
+	- "solicitud contacto": existente
+	- "pedir informacion": existente
+	- "datos": existente
+	- "derechos": existente
+	- "correccion": existente
+	- "documentos": existente
+	- "invalidez": existente
+	- "resolucion": existente
+	- "eventos inai": existente
+	- "certificado": existente
+	- "vulnerar": existente
+
+INFO|2023-03-14 10:13:43|root|
+Trabajo: /home/camm961001/Github/inai-itam/servicios/etl.py
+Consulta: temas_relacionados
+	- "inai": existente
+	- "semanas cotizadas": existente
+	- "expediente medico": existente
+	- "proteccion datos": existente
+	- "certificado covid": existente
+	- "resolucion pension": existente
+	- "pension": existente
+	- "pension documentos": existente
+	- "historial laboral": existente
+	- "constancia": existente
+	- "acceso informacion": existente
+	- "informacion": existente
+	- "informacion publica": existente
+	- "informacion gobierno": existente
+	- "curso inai": existente
+	- "capacitacion inai": existente
+	- "semanas imss": existente
+	- "inai cotizacion": existente
+	- "imss cotizadas": existente
+	- "constancia cotizacion": existente
+	- "expediente clinico": existente
+	- "vulneracion datos": existente
+	- "robo identidad": existente
+	- "fraude": existente
+	- "robo datos": existente
+	- "datos personales": existente
+	- "credito llamadas": existente
+	- "aviso privacidad": existente
+	- "denuncia prodatos": existente
+	- "fiel prodatos": existente
+	- "acceso datos": existente
+	- "negar datos": existente
+	- "datos incorrectos": existente
+	- "certificado correccion": existente
+	- "pension invalidez": existente
+	- "solicitud informacion": existente
+	- "solicitud contacto": existente
+	- "pedir informacion": existente
+	- "datos": existente
+	- "derechos": existente
+	- "correccion": existente
+	- "documentos": existente
+	- "invalidez": existente
+	- "resolucion": existente
+	- "eventos inai": existente
+	- "certificado": existente
+	- "vulnerar": existente
+

@@ -1,4 +1,4 @@
-import os, sys, json
+import os, json
 import datetime as dt
 
 from dateutil.relativedelta import relativedelta
@@ -7,9 +7,7 @@ from pytrends.request import TrendReq
 CURRENT = os.path.dirname(os.path.abspath(__file__))
 PARENT = os.path.dirname(CURRENT)
 ROOT = os.path.dirname(PARENT)
-sys.path.append(PARENT)
-
-import utilidades as utils
+#sys.path.append(PARENT)
 
 class Consultar:
     """
@@ -81,9 +79,7 @@ class Consultar:
             salida = {"aumento":aumento, "top":top}
 
         except KeyError:
-            pass
-
-        
+            pass      
 
         return salida
 

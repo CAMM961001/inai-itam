@@ -4,10 +4,10 @@ import datetime as dt
 from unidecode import unidecode
 from dateutil.relativedelta import relativedelta
 
-from nltk import download
 from nltk.corpus import stopwords
 
 # Descargar base de stopwords de NLTK
+#from nltk import download
 #download('stopwords')
 
 def generar_periodos(anios=2, meses=3):
