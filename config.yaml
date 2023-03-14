@@ -2,6 +2,7 @@ main:
   components_repository: "https://github.com/CAMM961001/inai-itam"
   project_name: inai_google_trends
   steps: all
+  tema: {"verde":"#00715F", "morado":"#6F197A"}
 datos:
   criterios: "datos/bruto/criterios_busqueda.txt"
   corpus: "datos/procesados/salidas_trends_api.json"
