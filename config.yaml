@@ -13,5 +13,5 @@ logs:
   etl: "logs/etl.log"
 etl:
   anios: 2
-  meses: 3
+  meses: 2
   relacionados: "datos/procesados/temas_relacionados.json"
