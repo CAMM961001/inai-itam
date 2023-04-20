@@ -102,10 +102,20 @@ class Consultar:
 
 def criterios_existentes(file):
     
-    # Se abre el archivo json
-    with open(file=file, mode='r') as f:
-        corpus = json.load(f)
-    f.close()
+    try:
+        # Se abre el archivo json
+        with open(file=file, mode='r') as f:
+            corpus = json.load(f)
+        f.close()
+    
+    except FileNotFoundError:
+        with open(file=file, mode='a') as f:
+            f.write('[]')
+        f.close()
+
+        with open(file=file, mode='r') as f:
+            corpus = json.load(f)
+        f.close()
 
     existencias = [corpus[idx]['criterio'] for idx in range(len(corpus))]
     
