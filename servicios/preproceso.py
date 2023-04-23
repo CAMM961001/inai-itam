@@ -1,4 +1,5 @@
 import os
+import csv
 import yaml
 import json
 import logging
@@ -20,6 +21,7 @@ f.close()
 # Paths de script
 RELACIONADOS = os.path.join(ROOT, config['datos']['relacionados'])
 RELACIONADOS_PROCES = os.path.join(ROOT, config['etl']['relacionados'])
+RELACIONADOS_EXPAND = os.path.join(ROOT, config['etl']['relacionados_expand'])
 
 # Configuración de logs
 logging.basicConfig(
@@ -37,6 +39,7 @@ f.close()
 
 # Formateo de datos
 n_criterios = len(contenido)
+filas_csv = [['criterio','inicio','fin','tipo','descripcion']]
 for id_criterio in range(n_criterios):
     
     # Extraer lotes de consulta
@@ -54,20 +57,45 @@ for id_criterio in range(n_criterios):
                 consulta = pd.Series(
                     tipos[tipo]['descripcion']
                 )
+
+                for val_ in consulta:
+                    # Almacenar dato en csv expandido
+                    fila_ = [
+                        contenido[id_criterio]['criterio']
+                        ,lotes[id_lote]['fecha_inicio']
+                        ,lotes[id_lote]['fecha_fin']
+                        ,tipo
+                        ,val_
+                    ]
+                    filas_csv.append(fila_)
+
+                # Formatear consulta
+                consulta = consulta.apply(utils.formatear_palabras)
+                
                 (# Asignar datos formateados a objeto original
                     contenido
                     [id_criterio]['contenidos']
                     [id_lote]['consulta']
                     [tipo]['descripcion']
-                ) = consulta.apply(utils.formatear_palabras).to_dict()
+                ) = consulta.to_dict()
+                
+                
             except TypeError:
                 continue
 
 
 # Almacenar resultados
 with open(RELACIONADOS_PROCES, 'w') as json_file:
-    json.dump(contenido, json_file)#, separators=(',',': ')
+    json.dump(contenido, json_file)
 json_file.close()
+
+# Almacenar resultados expandidos
+with open(RELACIONADOS_EXPAND, 'w') as csvfile: 
+    # Crear objeto csv
+    csvwriter = csv.writer(csvfile) 
+        
+    # Escribir filas de csv
+    csvwriter.writerows(filas_csv)
 
 
 if __name__ == '__main__':
